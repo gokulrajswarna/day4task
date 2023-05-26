@@ -1,0 +1,293 @@
+1.print odd numbers in an array:
+-------------------------------
+ function findOdd(inputarray,cb){
+  for(var i=0; i<inputarray.length; i++){
+    if(inputarray[i]%2==1){
+    
+    cb(inputarray[i])
+       }
+        
+     }
+     
+ }
+let inputarray =[];
+inputarray = userInput[0];
+ findOdd(inputarray,function(odd){
+     console.log(odd)
+ });
+
+
+2.Convert all the strings to title caps in a string array.
+-----------------------------------------------------------
+ function toTitleCaps(input,cb){
+     str=str.toLowerCase().split(' ');
+      for (var i = 0; i < str.length; i++) {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    cb(str.join(' '));
+}
+let str = userInput[0];
+
+toTitleCaps(str,function(output){
+     console.log(output)
+ });   
+ 
+
+3.Sum of all the numbers in array
+----------------------------------
+function findSum(num,cb) { 
+var sum=0;
+for (var i=0; i<input.length; i++){
+sum+=parseInt(input[i]);
+}
+console.log(sum)
+}
+var input=userInput[0]
+ findSum(input,function(output){
+     console.log(output)
+ });
+
+
+4.Return all the prime numbers in array.
+----------------------------------------  
+function isPrime(num,cb) {
+
+    let flag =true;
+  for (let start = 2; num > start; start++) {
+    if (num % start == 0) {
+      flag = false;
+      
+      break;
+    }
+  else{
+     flag = true;
+  }
+  }
+if(flag==true){
+    cb(num);
+   }
+
+
+}
+let input = []
+input = userInput[0];
+for(let i=0; i<input.length; i++){
+isPrime(input[i],function(num) {
+    console.log("prime number"+num)
+});
+}
+
+     
+5. Return all the palindromes in an array
+--------------------------------------------
+const arr = ['carecar', 1344, 12321, 'did', 'cannot'];
+const isPalindrome = el => {
+   const str = String(el);
+   let i = 0;
+   let j = str.length - 1;
+   while(i < j) {
+      if(str[i] === str[j]) {
+         i++;
+         j--;
+      }
+      else {
+         return false;
+      }
+   }
+   return true;
+};
+
+const findPalindrome = arr => {
+   return arr.filter(el => isPalindrome(el));
+};
+console.log(findPalindrome(arr));
+
+
+6. Return median of two sorted arrays of the same size.
+-------------------------------------------------------
+     function getMedian(ar1, ar2, n,cb)
+    {
+    let j = 0;
+    let i = n - 1;
+    while (ar1[i] > ar2[j] && j < n && i > -1)
+    {
+        let temp = ar1[i];
+        ar1[i] = ar2[j];
+        ar2[j] = temp;
+        i--; j++;
+    }
+    ar1.sort(function(a, b){return a - b});
+    ar2.sort(function(a, b){return a - b});
+     cb(parseInt((ar1[n - 1] + ar2[0]) / 2, 10));
+    }
+     
+    let ar1 = [ 1, 12, 15, 26, 38 ];
+    let ar2 = [ 2, 13, 17, 30, 45 ];
+ 
+    let n1 = 5;
+    let n2 = 5;
+    
+   getMedian(ar1,ar2,n1,function(output){
+      console.log("Median is "+ output);
+ });
+
+7. Remove duplicates from an array
+----------------------------------
+function removeDuplicates(arr , n, cb) {
+        if (n == 0 || n == 1)
+            return n;
+ 
+        
+        var j = 0;
+ 
+       
+        for (i = 0; i < n - 1; i++)
+            if (arr[i] != arr[i + 1])
+                arr[j++] = arr[i];
+ 
+        arr[j++] = arr[n - 1];
+ 
+        cb(j);
+    }
+ 
+         var arr = [ 1, 2, 2, 3, 4, 4, 4, 5, 5 ];
+        var n = arr.length;
+ 
+  removeDuplicates(arr,n,function(output){
+      for (i = 0; i < output; i++)
+            console.log(arr[i]);
+ });
+
+   
+8.Rotate an array by k times.
+-----------------------------
+
+    function RightRotate(a, n, k,cb)
+{
+  for (let i = 0; i < n; i++) {
+        if (i < k) {
+console.log(a[n + i - k] + " ");
+        }
+        else {
+  console.log((a[i - k]) + " ");
+        }
+    }
+    
+}
+ 
+
+let Array = [1, 2, 3, 4, 5];
+let N = Array.length;
+let K = 3;
+RightRotate(Array,N,K,function(num) {
+    console.log(""+num)
+});
+ 
+Do the below programs in arrow functions.
+-----------------------------------------
+
+1.Print odd numbers in an array
+------------------------------
+   
+ findOdd = (inputarray) => {
+  for(var i=0; i<inputarray.length; i++){
+    if(inputarray[i]%2==1){
+    
+    console.log (inputarray[i]);
+       }
+        
+     }
+     
+ }
+let inputarray =[];
+inputarray = userInput[0];
+ findOdd(inputarray);
+ 
+});
+ 
+2.Convert all the strings to title caps in a string array
+----------------------------------------------------------
+
+  toTitleCaps=(input)=>{
+     str=input.toLowerCase().split(' ');
+      for (var i = 0; i < str.length; i++) {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return (str.join(' '));
+}
+let str = userInput[0];
+
+let output=toTitleCaps(str);
+     console.log(output);
+
+3.Sum of all numbers in an array
+--------------------------------  
+   
+ findSum=(input)=> {
+var sum=0;
+for (var i=0; i<input.length; i++){
+   
+sum+=parseInt(input[i]);
+}
+console.log(sum)
+}
+var input=userInput[0]
+ findSum(input)
+
+4.Return all the prime numbers in an array
+------------------------------------------
+
+ isPrime=(num)=> {
+
+    let flag =true;
+  for (let start = 2; num > start; start++) {
+    if (num % start == 0) {
+      flag = false;
+      
+      break;
+    }
+  else{
+     flag = true;
+  }
+  }
+if(flag==true){
+    return (num);
+   }
+
+
+}
+let input = []
+input = userInput[0];
+for(let i=0; i<input.length; i++){
+let output=isPrime(input[i])
+console.log(output);
+}
+
+5.Return all the palindromes in an array
+----------------------------------------
+
+const arr = ['carecar', 1344, 12321, 'did', 'cannot'];
+const isPalindrome = el => {
+   const str = String(el);
+   let i = 0;
+   let j = str.length - 1;
+   while(i < j) {
+      if(str[i] === str[j]) {
+         i++;
+         j--;
+      }
+      else {
+         return false;
+      }
+   }
+   return true;
+};
+
+const findPalindrome = arr => {
+   return arr.filter(el => isPalindrome(el));
+};
+console.log(findPalindrome(arr));
+}
+
+
+
