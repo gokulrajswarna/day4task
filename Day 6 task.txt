@@ -1,0 +1,164 @@
+1.https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+----------------------------------------------------------------------
+class Movie {
+    constructor(title= '', studio = '', rating = 'PG') {
+       this.title = title;
+       this.studio = studio;
+       this.rating = rating;
+    }
+ 
+    getPG(movies = [], rating = '') {
+       return movies.filter((m) => m.rating === rating);
+    }
+}
+ 
+
+const casionRoyaleMovie = new Movie('Casino Royale', 'Eon Productions', 'PG13');
+const leo = new Movie('Leo', 'LCU', 'PG');
+const vikram = new Movie('Vikram', 'Vijay', 'PG');
+const avatar = new Movie('Avatar: The water way', 'EROS', 'PG13');
+const avengers = new Movie('The avengers: End Game', 'LCU', 'PG');
+ 
+const moviesArray = [casionRoyaleMovie, leo, vikram, avatar, avengers];
+ 
+console.log(casionRoyaleMovie.getPG(moviesArray, 'PG13'));
+console.log(casionRoyaleMovie.getPG(moviesArray, 'PG'));
+
+2.https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+-----------------------------------------------------------------------------
+ class Circle {
+ 
+ radius:string=1.0;
+ color:string='red';
+    constructor() {
+  
+}
+
+ constructor(radius: double){
+       this.radius=radius;
+    }
+
+ constructor(radius: double, color: string){
+       this.radius=radius;
+       this.color=color;
+       }
+public get radius() {
+    return this.radius;
+  }
+public set radius(radius: double) {
+this.radius = radius;
+}
+public get color(){
+    return this.color;
+  }
+ public set color(color: string) {
+  this.color=color;
+}
+ public String toString(){
+  return radius+" "+color;  
+ } 
+public double getArea(){
+ return 3.14 * this.radius * this.radius;
+}
+double getCircumference() {  
+  return 2 * 3.14 * this.radius;  
+ }  
+ 
+ var circle = new Circle();
+ 
+
+}
+
+
+3.Write a “person” class to hold all the details.
+-----------------------------------------------
+class Person {
+  constructor(Firstname,Lastname,address,emailid) {
+    this.Firstname = "Gokulraj";
+    this.Lastname = "Nagarajan";
+    this.address="Chennai";
+    this.emailid="gokulrajnan92@gmail.com";
+    
+  }    
+  public get Firstname(){
+    return this.Firstname;
+  }
+ public set Firstname(Firstname: string) {
+  this.Firstname=Firstname;
+}
+public get Lastname(){
+    return this.Lastname;
+  }
+ public set Lastname(Lastname: string) {
+  this.Lastname=Lastname;
+  } 
+  public get address(){
+    return this.address;
+  }
+ public set address(address: string) {
+  this.address=address;
+}
+public get emailid(){
+    return this.emailid;
+  }
+ public set emailid(emailid: string) {
+  this.emailid=emailid;
+  }
+  }
+  
+  4.write a class to calculate the uber price.
+----------------------------------------------
+
+class Uber {
+  constructor(FromLoc,TOLoc,kiloMeter,kilometerPerhour,name,mobileNumber) {
+    this.FromLoc="chennai";
+    this.ToLoc="bangolore";
+    this.kiloMeter=200;
+    this.kilometerPerhour=15;
+    this.name="Gokulraj";
+    this.mobileNumber="9524811678";
+    
+  }    
+  public get FromLoc(){
+    return this.FromLoc;
+  }
+ public set FromLoc(FromLoc:string){
+  this.FromLoc=FromLoc;
+}
+public get ToLoc(){
+    return this.ToLoc;
+ }
+ public set ToLoc(ToLoc:string){
+ this.ToLoc=ToLoc;
+  } 
+  public get kiloMeter(){
+    return this.kiloMeter;
+  }
+ public set kilometerPerhour(
+ kilometerPerhour: string) {
+  this.kilometerPerhour=kilometerPerhour;
+}
+public get name(){
+    return this.name;
+  }
+ public set name(name: string) {
+  this.name=name;
+  }
+public get mobileNumber(){
+    return this.mobileNumber;
+  }
+ public set mobileNumber(mobileNumber: string) {
+  this.mobileNumber=mobileNumber;
+  }
+  
+ public get calcUberpriece() {
+    return this.kiloMeter*kilometerPerhour;
+  }
+  }
+  Uber obj=new Uber("chennai",
+    "bangolore",
+    200,
+    15,
+    "Gokulraj",
+    "9524811678");
+    console.log(calcUberpriece);
